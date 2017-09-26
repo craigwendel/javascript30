@@ -47,9 +47,9 @@ body {
 }
 
 div.hand.second-hand {
-  height: 3px;
+  height: 2px;
 }
 
 div.hand.hour-hand {
-  height: 8px;
+  height: 6px;
 }
