@@ -1,9 +1,11 @@
 const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.plates')
+const clearButton = document.getElementById('clear')
 const items = JSON.parse(localStorage.getItem('items')) || []
 
 function addItem (e) {
   e.preventDefault()
+  console.log(e.target)
   const text = (this.querySelector('[name=item]')).value
   const item = {
     text,
@@ -35,7 +37,13 @@ function toggleDone (e) {
   populateList(items, itemsList)
 }
 
+function clearItems (e) {
+  localStorage.removeItem('items', JSON.stringify(items))
+  location.reload()
+}
+
 addItems.addEventListener('submit', addItem)
 itemsList.addEventListener('click', toggleDone)
+clearButton.addEventListener('click', clearItems)
 
 populateList(items, itemsList)
