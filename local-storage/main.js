@@ -1,11 +1,11 @@
 const addItems = document.querySelector('.add-items')
 const itemsList = document.querySelector('.plates')
 const clearButton = document.getElementById('clear')
+
 const items = JSON.parse(localStorage.getItem('items')) || []
 
 function addItem (e) {
   e.preventDefault()
-  console.log(e.target)
   const text = (this.querySelector('[name=item]')).value
   const item = {
     text,
