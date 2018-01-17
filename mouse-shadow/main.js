@@ -15,14 +15,10 @@ function shadow (e) {
   const yWalk = Math.round((y / height * walk) - (walk / 2))
 
   text.style.textShadow = `
-    ${xWalk}px ${yWalk}px 0 red,
-    ${xWalk * -1}px ${yWalk}px 0 green,
-    ${yWalk}px ${xWalk}px 0 blue,
-    ${yWalk * -1}px ${xWalk}px 0 yellow`
+    ${xWalk}px ${yWalk}px 0 rgba(255,0,255,0.7),
+    ${xWalk * -1}px ${yWalk}px 0 rgba(0,255,255,0.7),
+    ${yWalk}px ${xWalk * -1}px 0 rgba(0,255,0,0.7),
+    ${yWalk * -1}px ${xWalk}px 0 rgba(0,0,255,0.7)`
 }
 
 hero.addEventListener('mousemove', shadow)
-
-// ${xWalk * -1}px ${yWalk}px 0 rbga(0,255,255,0.7),
-// ${yWalk}px ${xWalk}px 0 rbga(0,255,0,.07),
-// ${yWalk * -1}px ${xWalk}px 0 rbga(0,0,255,0.7);
